@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tronproject;
+import java.awt.*;
+import java.awt.event.*;
+public class TronGame extends Frame implements KeyListener {
+    @Override
+    public void keyTyped(KeyEvent ke) {
+       
+    }
 
-/**
- *
- * @author morrcol18
- */
-public class TronGame {
-    
+    @Override
+    public void keyPressed(KeyEvent ke) {
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        
+    }
 }
