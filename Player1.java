@@ -1,11 +1,14 @@
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+package tronproject;
+import java.awt.event.*;
 public class Player1 implements KeyListener {
     private int xPos;
     private int yPos;
     private int velo;
-    private int direction;
+    private int direction = 2;
 
+    public Player1(){
+        this.addKeyListener(this);
+    }
     @Override
     public void keyTyped(KeyEvent ke) {
         
