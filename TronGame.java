@@ -1,8 +1,8 @@
 package tronproject;
-import java.awt.*;
+import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-public class TronGame extends Frame implements KeyListener {
+public class TronGame extends JFrame implements KeyListener {
     Player1 player1 = new Player1();
     Player2 player2 = new Player2();
     @Override
