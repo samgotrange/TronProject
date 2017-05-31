@@ -7,7 +7,9 @@ public class TronGame extends JFrame implements KeyListener {
     Player2 player2 = new Player2();
     @Override
     public void keyTyped(KeyEvent ke) {
-        
+        if (ke.getKeyChar()== ){
+            
+    }
     }
 
     @Override
