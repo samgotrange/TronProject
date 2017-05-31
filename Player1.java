@@ -1,6 +1,6 @@
 package tronproject;
 import java.awt.event.*;
-public class Player1 {
+public class Player1{
     private int xPos;
     private int yPos;
     private int velo;
