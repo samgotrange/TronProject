@@ -2,10 +2,10 @@ package tronproject;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 public class Player1{
-    private int xPos;
-    private int yPos;
-    private int velo = 10;
-    private int direction = 3;
+    public int xPos = 0;
+    public int yPos = 100;
+    public int velo;
+    public int direction = 3;
     
     public int getxpos(){
         return xPos;
@@ -24,16 +24,12 @@ public class Player1{
     public void move1()throws InterruptedException {
         if (direction == 1) {
             xPos -= velo;
-            TimeUnit.MILLISECONDS.sleep(100);
         }else if (direction == 2) {
             yPos -= velo;
-            TimeUnit.MILLISECONDS.sleep(100);
         }else if (direction == 3) {
             xPos += velo;
-            TimeUnit.MILLISECONDS.sleep(100);
         }else if (direction == 4) {
             yPos += velo;
-            TimeUnit.MILLISECONDS.sleep(100);
         }
     }
 }
