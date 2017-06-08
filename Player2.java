@@ -6,6 +6,14 @@ public class Player2{
     private int yPos;
     private int velo = 10;
     private int direction = 1;
+    
+    public int getxpos(){
+        return xPos;
+    }
+    
+    public int getypos(){
+        return yPos;
+    }
        
     public int getDirection1() {
         return direction;
