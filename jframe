@@ -1,0 +1,6 @@
+package tronproject;
+
+import javax.swing.JFrame;
+
+public class jframe extends JFrame {
+}
