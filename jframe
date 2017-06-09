@@ -1,6 +1,11 @@
 package tronproject;
 
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 public class jframe extends JFrame {
+
+    class GPanel extends JPanel {
+
+    }
 }
