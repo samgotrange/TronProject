@@ -1,14 +1,13 @@
 package tronproject;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
-public class TronGame extends JPanel implements KeyListener {
+public class TronGame extends JPanel implements KeyListener, ActionListener {
 
     Player1 player1;
     Player2 player2;
@@ -17,10 +16,9 @@ public class TronGame extends JPanel implements KeyListener {
     private final int VELO = 10;
     private int xPos2;
     private int yPos2;
-    private int direction1;
-    private int direction2;
+    private int direction1=3;
+    private int direction2=1;
     private Timer timer;
-    private JPanel j;
     
     public TronGame() {
         player1 = new Player1();
@@ -36,26 +34,35 @@ public class TronGame extends JPanel implements KeyListener {
         player2.velo = VELO;
         player2.direction = direction2;
     }
-
-    public JPanel setPanel(){
-        j = this;
-        return j;
-    }
     
     public void Start(){
-        timer = new Timer(25, (ActionListener) this);
+        timer = new Timer(25, this);
         timer.start();
-        setPanel();
         
         
         
+    }
+    
+    
+    public void actionPerformed (ActionEvent ae) {
+        try {
+            player1.move1();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TronGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            player2.move2();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TronGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.repaint();
     }
     
     // method for overriding paintComponent
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.fillRect(0, 0, 10, 10);
+        g.fillRect(player1.getxpos(), player1.getypos(), 10, 10);
     }
     
     @Override
