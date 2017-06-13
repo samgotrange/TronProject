@@ -40,6 +40,12 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
         } catch (InterruptedException ex) {
             Logger.getLogger(TronGame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (player1.getxpos() < 0) {
+            player1.setxpos(0);
+        }
+        if (player1.getxpos() > this.size().width - 10) {
+            player1.setxpos(this.size().width - 10);
+        }
         try {
             player2.move2();
         } catch (InterruptedException ex) {
@@ -51,7 +57,7 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
     // method for overriding paintComponent
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        
         g.fillRect(player1.getxpos(), player1.getypos(), 10, 10);
         g.fillRect(player2.getxpos(), player2.getypos(), 10, 10);
 
@@ -64,7 +70,6 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        System.out.println(ke.getKeyChar());
         if (ke.getKeyCode() == VK_LEFT) {
             player2.setDirection(1);
         } else if (ke.getKeyCode() == VK_UP) {
@@ -89,5 +94,3 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
 
     }
 }
-    // timer event / method
-
