@@ -11,36 +11,18 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
 
     Player1 player1;
     Player2 player2;
-    private int xPos1;
-    private int yPos1;
-    private final int VELO = 10;
-    private int xPos2;
-    private int yPos2;
-    private int direction1=3;
-    private int direction2=1;
     private Timer timer;
+    
     
     public TronGame() {
         player1 = new Player1();
         player2 = new Player2();
-        
-        player1.xPos = xPos1;
-        player1.yPos = yPos1;
-        player1.velo = VELO;
-        player1.direction = direction1;
-        
-        player2.xPos = xPos2;
-        player2.yPos = yPos2;
-        player2.velo = VELO;
-        player2.direction = direction2;
+        //KeyListener k = new KeyListener();
     }
     
     public void Start(){
         timer = new Timer(25, this);
         timer.start();
-        
-        
-        
     }
     
     
@@ -63,6 +45,8 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.fillRect(player1.getxpos(), player1.getypos(), 10, 10);
+        g.fillRect(player2.getxpos(), player2.getypos(), 10, 10);
+                
     }
     
     @Override
