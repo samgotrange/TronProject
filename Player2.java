@@ -1,11 +1,11 @@
 package tronproject;
-import java.awt.event.*;
+import java.awt.*;
 import java.util.concurrent.TimeUnit;
 public class Player2{
-    public int xPos = 400;
-    public int yPos = 100;
-    public int velo;
-    public int direction = 1;
+    private int xPos = 400;
+    private int yPos = 100;
+    private int velo = 10;
+    private int direction = 1;
     
     public int getxpos(){
         return xPos;
@@ -21,7 +21,7 @@ public class Player2{
     public void setDirection(int a) {
         direction = a;
     }
-    public void move2() throws InterruptedException {
+    public void move2()throws InterruptedException {
         if (direction == 1) {
             xPos -= velo;
         }else if (direction == 2) {
