@@ -2,8 +2,8 @@ package tronproject;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 public class Player1{
-    private int xPos = 0;
-    private int yPos = 100;
+    private int xPos = 200;
+    private int yPos = 700;
     private int velo = 10;
     private int direction = 3;
     
