@@ -34,6 +34,7 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
         timer.start();
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
         try {
             player1.move1();
@@ -46,18 +47,34 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
         if (player1.getxpos() > this.size().width - 10) {
             player1.setxpos(this.size().width - 10);
         }
+        if (player1.getypos() < 0) {
+            player1.setypos(0);
+        }
+        if (player1.getypos() > this.size().height - 10) {
+            player1.setypos(this.size().height - 10);
+        }
         try {
             player2.move2();
         } catch (InterruptedException ex) {
             Logger.getLogger(TronGame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.repaint();
+        if (player2.getxpos() < 0) {
+            player2.setxpos(0);
+        }
+        if (player2.getxpos() > this.size().width - 10) {
+            player2.setxpos(this.size().width - 10);
+        }
+        if (player2.getypos() < 0) {
+            player2.setypos(0);
+        }
+        if (player2.getypos() > this.size().height - 10) {
+            player2.setypos(this.size().height - 10);    
+        }
+    this.repaint();
     }
 
-    // method for overriding paintComponent
     @Override
     public void paintComponent(Graphics g) {
-        
         g.fillRect(player1.getxpos(), player1.getypos(), 10, 10);
         g.fillRect(player2.getxpos(), player2.getypos(), 10, 10);
 
