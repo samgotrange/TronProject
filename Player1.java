@@ -10,11 +10,15 @@ public class Player1{
     public int getxpos(){
         return xPos;
     }
-    
+    public void setxpos(int a){
+        xPos = a;
+    }
     public int getypos(){
         return yPos;
     }
-    
+    public void setypos(int b){
+        yPos = b;
+    }
     public int getDirection1() {
         return direction;
     }
