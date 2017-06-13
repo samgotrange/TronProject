@@ -2,6 +2,14 @@ package tronproject;
 
 import java.awt.*;
 import java.awt.event.*;
+import static java.awt.event.KeyEvent.VK_A;
+import static java.awt.event.KeyEvent.VK_D;
+import static java.awt.event.KeyEvent.VK_DOWN;
+import static java.awt.event.KeyEvent.VK_LEFT;
+import static java.awt.event.KeyEvent.VK_RIGHT;
+import static java.awt.event.KeyEvent.VK_S;
+import static java.awt.event.KeyEvent.VK_UP;
+import static java.awt.event.KeyEvent.VK_W;
 import javax.swing.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +24,8 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
     public TronGame() {
         player1 = new Player1();
         player2 = new Player2();
+        this.setFocusable(true);
+        this.requestFocusInWindow();
         addKeyListener(this);
     }
 
@@ -55,21 +65,21 @@ public class TronGame extends JPanel implements KeyListener, ActionListener {
     @Override
     public void keyPressed(KeyEvent ke) {
         System.out.println(ke.getKeyChar());
-        if (ke.getKeyChar() == 37) {
+        if (ke.getKeyCode() == VK_LEFT) {
             player2.setDirection(1);
-        } else if (ke.getKeyChar() == 38) {
+        } else if (ke.getKeyCode() == VK_UP) {
             player2.setDirection(2);
-        } else if (ke.getKeyChar() == 39) {
+        } else if (ke.getKeyCode() == VK_RIGHT) {
             player2.setDirection(3);
-        } else if (ke.getKeyChar() == 40) {
+        } else if (ke.getKeyCode() == VK_DOWN) {
             player2.setDirection(4);
-        } else if (ke.getKeyChar() == 65) {
+        } else if (ke.getKeyCode() == VK_A) {
             player1.setDirection(1);
-        } else if (ke.getKeyChar() == 87) {
+        } else if (ke.getKeyCode() == VK_W) {
             player1.setDirection(2);
-        } else if (ke.getKeyChar() == 68) {
+        } else if (ke.getKeyCode() == VK_D) {
             player1.setDirection(3);
-        } else if (ke.getKeyChar() == 83) {
+        } else if (ke.getKeyCode() == VK_S) {
             player1.setDirection(4);
         }
     }
