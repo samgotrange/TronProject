@@ -8,7 +8,7 @@ public class TronProject {
     public static void main(String[] args) throws InterruptedException {
         boolean gameOn = true;
         jframe j = new jframe();
-        j.setSize(9999, 9999);
+        j.setSize(950, 950);
         j.setVisible(true);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TronGame game = new TronGame();
